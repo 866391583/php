@@ -18,3 +18,10 @@ puts a
 a=Array[1,2,3,4,3,2,1]
 a.each{|x| puts "hello #{x}"}
 a.collect{|x| puts "hello #{x} #{x}"}
+a=['ubuntu','mac','windows']
+b=['redhat','ubuntu','debian']
+(a-b).each {|x| print "#{x}=>"}
+puts ""
+(a&b).each{|x| print "#{x}::"}
+puts ""
+(a|b).each{|x| print "#{x}->"}
