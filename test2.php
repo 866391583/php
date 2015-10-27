@@ -120,5 +120,8 @@ class BBB implements AAA
 }
 $a=new BBB();
 $a->say();
-echo $a::cProp;
-echo $a::bCProp;
+echo <<<'NOW'
+123456789\n0
+!@#$%^&*()
+qwertyuiopasdfghjklzxcvbnm,./
+NOW;
