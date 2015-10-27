@@ -27,4 +27,32 @@ HERE;
 $obj=new Obj("hello",20);
 $obj->say();
 echo Obj::PI;
-echo "\t".E;
+echo E;
+function abc($n)
+{
+    if($n<=1)
+        return 1;
+    else
+        return $n+abc($n-1);
+}
+echo "\n".abc(10);
+$abc="hello";
+function globalAndStatic()
+{
+    global $abc;
+    echo $abc;
+}
+globalAndStatic();
+function abc2($n)
+{
+    static $sum=0;
+    if($n<1)
+        return ;
+    else
+    {
+        $sum+=$n;
+        abc2($n-1);
+    }
+    return $sum;
+}
+echo abc2(10);
