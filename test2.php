@@ -27,7 +27,7 @@ HERE;
 $obj=new Obj("hello",20);
 $obj->say();
 echo Obj::PI;
-echo E;
+//echo E;
 function abc($n)
 {
     if($n<=1)
