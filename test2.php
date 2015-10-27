@@ -116,7 +116,7 @@ class BBB implements AAA
         echo " say in BBB...";
         echo self::bCProp;
     }
-    const bbbCProp="world";
+    const bCProp="world";
 }
 $a=new BBB();
 $a->say();
