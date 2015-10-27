@@ -19,3 +19,32 @@ try{
     echo "\n************************\n";
 }
 echo "\n&&&&&&&&&&&&&&&&&&&&&&&&&&&&\n";
+class TestPrivate
+{
+    private function say()
+    {
+        echo "private function say";
+    }
+    public function run(TestPrivate $a)
+    {
+        $a->say();
+    }
+}
+$t=new TestPrivate();
+$t->run(new TestPrivate());
+class AAA
+{
+    public function ftest()
+    {
+        echo "ftest";
+    }
+}
+class BBB extends AAA
+{
+    public function ftest()
+    {
+        echo "hello ,abc";
+    }
+}
+$a=new BBB();
+$a->ftest();
