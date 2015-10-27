@@ -38,6 +38,20 @@ class AAA
     {
         echo "ftest";
     }
+    public function run()
+    {
+        echo "***";
+        $this->ftest();
+    }
+    public static function stest()
+    {
+        echo "static in AAA";
+    }
+    public static function srun()
+    {
+        echo "%%%";
+        static::stest();
+    }
 }
 class BBB extends AAA
 {
@@ -45,6 +59,11 @@ class BBB extends AAA
     {
         echo "hello ,abc";
     }
+    public static function stest()
+    {
+        echo "static in BBB";
+    }
 }
 $a=new BBB();
-$a->ftest();
+$a->run();
+$a::srun();
