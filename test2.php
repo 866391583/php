@@ -91,3 +91,34 @@ echo B::$sprop;
 B::sMethod();
 echo $a::$sprop;
 echo $a::sMethod();
+abstract class AA
+{
+    public abstract function say();
+}
+class BB extends AA
+{
+    public function say()
+    {
+        echo "BB...";
+    }
+}
+$a=new BB();
+$a->say();
+interface AAA
+{
+    public function say();
+    const cProp="hello";
+}
+class BBB implements AAA
+{
+    public function say()
+    {
+        echo " say in BBB...";
+        echo self::bCProp;
+    }
+    const bbbCProp="world";
+}
+$a=new BBB();
+$a->say();
+echo $a::cProp;
+echo $a::bCProp;
