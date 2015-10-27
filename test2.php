@@ -56,3 +56,38 @@ function abc2($n)
     return $sum;
 }
 echo abc2(10);
+class A
+{
+    public $name="A Name";
+    public function __construct()
+    {
+        echo "\nConstruct A...\n";
+    }
+}
+class B extends A
+{
+    public static $sprop="static property";
+    public function __construct()
+    {
+        echo "\nConstruct B...\n";
+        echo $this->name;
+        parent::__construct();
+    }
+    public static function sMethod()
+    {
+        echo self::$sprop;
+    }
+    public function say()
+    {
+        echo $this->name;
+        echo self::$sprop;
+        self::sMethod();
+    }
+}
+$a=new B();
+$a->say();
+echo "\n*******************\n";
+echo B::$sprop;
+B::sMethod();
+echo $a::$sprop;
+echo $a::sMethod();
