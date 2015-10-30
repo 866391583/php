@@ -14,3 +14,15 @@ end
 formatArray do |var|
     puts "format array:=> #{var}"
 end
+class MyArray
+    def initialize()
+        @arr=%w{file edit selection find view goto tools project preferences help}
+    end
+    def testBlock()
+        for i in @arr
+            yield i
+        end
+    end
+end
+arr=MyArray.new
+arr.testBlock{|var| puts "MyArray:=> #{var}"}
